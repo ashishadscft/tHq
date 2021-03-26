@@ -91,6 +91,8 @@ void totalcountcluster1(){
 	TEPXClustersPerEvent1[d][r]->SetPoint(pu, pumap[pulist[pu]], count);
 	TEPXClustersPerEvent1[d][r]->SetPointError(pu, 0, counterror);
 	
+	totalcount+=count;
+        totalcounterror+= counterror * counterror;
       }
       
       totalcount_disk[d]+= count;     //not correct. Think how to find/sum counts per disk ??
@@ -99,8 +101,7 @@ void totalcountcluster1(){
     }
     
     
-    totalcount+=count;
-    totalcounterror+= counterror * counterror;
+    
     
     
     for (int d = 0; d < disklist.size(); d++) {
